@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin Dashboard</title></head>
+<body>
+<h1>Admin Dashboard</h1>
+<h2>Bookings</h2>
+<ul>
+    {% for booking in bookings %}
+    <li>{{ booking.day }} at {{ booking.time }} – {{ booking.name }} ({{ booking.email }}) with {{ booking.horse }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

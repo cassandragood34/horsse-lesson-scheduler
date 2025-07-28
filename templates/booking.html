@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Book a Lesson</title></head>
+<body>
+<h1>Book Your Horseback Riding Lesson</h1>
+<form action="/book" method="post">
+    Name: <input type="text" name="name" required><br>
+    Email: <input type="email" name="email" required><br>
+    Day:
+    <select name="day">
+        {% for day, times in availability.items() %}
+        <option value="{{ day }}">{{ day }}</option>
+        {% endfor %}
+    </select><br>
+    Time:
+    <select name="time">
+        <option value="16:00">4:00 PM</option>
+        <option value="16:45">4:45 PM</option>
+        <option value="17:30">5:30 PM</option>
+        <option value="18:15">6:15 PM</option>
+        <option value="19:00">7:00 PM</option>
+    </select><br>
+    Horse:
+    <select name="horse">
+        {% for horse in horses %}
+        <option value="{{ horse }}">{{ horse }}</option>
+        {% endfor %}
+    </select><br>
+    <input type="submit" value="Book Now">
+</form>
+</body>
+</html>
